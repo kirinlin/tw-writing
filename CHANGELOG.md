@@ -2,6 +2,12 @@
 
 本專案遵循 [Keep a Changelog](https://keepachangelog.com/) 格式。
 
+## [0.3.1] - 2026-09-12
+
+### Fixed
+
+- `SKILL.md`、`README.md`：修正 §25「外部工具（若可用）」中 MCP 工具名稱誤植——工具名稱為 `zhtw-mcp`，非 `zhtw`（連結一律指向 `zhtw-mcp`，但呼叫處誤寫為 `zhtw`），統一改為 `zhtw-mcp`。
+
 ## [0.3.0] - 2026-09-12
 
 ### Added
