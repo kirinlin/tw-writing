@@ -4,11 +4,11 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: fc293f6007dac2aa8f5d189ac272048d083bdcfc.
+Current commit: fc53331145836bdb02461548b5081376d938839c.
 
 Tests/scenarios: none (Markdown-only repo; no build or test suite).
 
-Configuration: ag.json — schema v7; claude-default profile confirmed working this round. Its `better` tier (`claude-opus-4-6`) does not resolve for this CLI — substituted `claude-opus-5/high` for the A-001 cross-check dispatch; the id itself is not yet fixed.
+Configuration: ag.json — schema v7; invalid for claude this round.
 
 Proven: the host template was initialized; A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS) with 19 non-blocking findings recorded in .agentflow/A-001-cross-check-review.md.
 
@@ -50,7 +50,7 @@ Streams: none.
 - ans:
 
 Cross-check review: `.agentflow/A-001-cross-check-review.md`
-Cross-check implementation: fc293f6007dac2aa8f5d189ac272048d083bdcfc
+Cross-check implementation: fc53331145836bdb02461548b5081376d938839c
 
 ---
 
