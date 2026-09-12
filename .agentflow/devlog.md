@@ -4,15 +4,15 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: 08913a0; pushed to origin/main.
+Current commit: 065bbad; pushed to origin/main.
 
 Tests/scenarios: none (Markdown-only repo; no build or test suite).
 
-Configuration: ag.json — schema v7; `better` tier claude model id fixed (`claude-opus-5/medium`). `allow-ag` changed from `ask` to `on` on disk mid-A-002, not made by this session — unconfirmed with owner, see Open.
+Configuration: ag.json — schema v7; validated for claude this round.
 
-Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings across SKILL.md/CLAUDE.md/README.md/references/taiwan-terms.md/.gitignore/ag.json, self-verified by grep sweep and structural checks, and bumped 0.2.0 to 0.2.1 (CHANGELOG.md, plugin.json, marketplace.json). Completion's external cross-check gate was skipped this round with owner's recorded `skip-review`.
+Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings across SKILL.md/CLAUDE.md/README.md/references/taiwan-terms.md/.gitignore/ag.json (including the invalid `better`-tier model id), self-verified by grep sweep and structural checks, and bumped 0.2.0 to 0.2.1 (CHANGELOG.md, plugin.json, marketplace.json). Completion's external cross-check gate was skipped this round with owner's recorded skip-review.
 
-Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the `allow-ag: ask -> on` change was intentional.
+Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the mid-A-002 `allow-ag` change from `ask` to `on`, not made by this session, was intentional.
 
 Next: await owner's answers to A-002's 3 questions.
 
