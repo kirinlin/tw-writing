@@ -2,6 +2,31 @@
 
 本專案遵循 [Keep a Changelog](https://keepachangelog.com/) 格式。
 
+## [0.2.1] - 2026-09-12
+
+### Fixed
+
+- §25 AI Agent 行為規則：修正 `README.md`、`CLAUDE.md` 中「佔用 context」誤用（規則已規定 佔用 → 占用，僅修正兩處未依規則書寫的段落）。
+- §22 標題「不要過度優化」改為「不要過度精簡」，避免與 §11.1「優化 → 最佳化」矛盾，並更準確描述本節主旨（避免過度刪減語意，而非工程上的最佳化）。
+- §11.3 用字表：`傳送門` 的替代寫法從模糊的「（視情境改寫）」改為具體選項「連結／傳送點／捷徑（依情境擇一）」。
+- §13.1 修正 `30°C` 誤標為「角度」，改稱「度數符號」，並補上真正的角度範例 `45°`。
+- §4.5、§16.1：為「可以」新增明確例外——作為 RFC 2119 MAY 的正式對應詞時不受「避免不必要的可以」規則影響，避免兩條規則依序套用時把 MAY 誤改為 SHOULD。
+- §25 MUST 清單第 8、9 項（不因追求簡潔而刪除必要條件／不擅自增加原文沒有的事實）改列入 MUST NOT，修正否定敘述誤置於正面義務清單、且與既有 MUST NOT 項目強度不一致的問題。
+- §24 Example 1、2 的 After 範例移除殘留的「可以」與「我們」，使其與 §4.1、§10.8 的示範一致。
+- `references/taiwan-terms.md`：移除「優化」在同形異義詞表中的重複分類（與 §2 及 `SKILL.md` §11.1 的「優化 → 最佳化」分類衝突），統一為單一分類。
+- `references/taiwan-terms.md`：`並發`、`並行` 兩列分別補上英文原詞（concurrency、parallelism），解決「並行」同時是建議用語與應避免用語的矛盾。
+- `references/taiwan-terms.md`：補上遺漏的「服務器 → 伺服器」列，與 `SKILL.md` §11.1 高頻對照表一致。
+- `references/taiwan-terms.md`：簡化簡體字搜尋指令，移除多餘的前置 `rg` 呼叫並排除本檔案自身。
+- `references/taiwan-terms.md`：破折號規則新增範圍說明，標題中以單一 em dash 分隔標籤與說明（如「Pass 1 — Structure」）不受「破折號需加倍」規則規範。
+- `.gitignore` 新增 `.worker-*.log`，避免外部審查流程產生的執行紀錄檔混入已發佈的 repo。
+- `ag.json` 修正 `better` tier 的 `claude` 模型 id（`claude-opus-4-6` 不存在，改為 `claude-opus-5/medium`）。
+
+### Changed
+
+- `README.md` 的「修改規範時」步驟改為指向 `CLAUDE.md` 對應章節，避免兩份清單各自增修後失去同步（原本 `README.md` 缺少 `CLAUDE.md` 才有的 `§` 交叉引用檢查步驟）。
+- `CLAUDE.md` 的「修改規範時」步驟新增「更新 `references/taiwan-terms.md`」一項，並補充子節編號慣例的例外（§23、§24 等不編號的 H3 不受 `### N.M` 規則限制）。
+- `references/taiwan-terms.md` 開頭新增說明：左右欄相同的列代表台灣與中國大陸寫法一致，審查命中不必改寫。
+
 ## [0.2.0] - 2026-09-12
 
 ### Added
@@ -34,5 +59,6 @@
 - Before / After 範例擴充至 12 則，新增台灣用語、修飾範圍歧義、AI 腔調、條件語序與中英文混排。
 - `README.md`、`CLAUDE.md`、MIT `LICENSE`。
 
+[0.2.1]: https://github.com/kirinlin/tw-writing/releases/tag/v0.2.1
 [0.2.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.2.0
 [0.1.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.1.0

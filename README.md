@@ -45,7 +45,7 @@ references/taiwan-terms.md        台灣用語與中國大陸用語完整對照�
 .claude-plugin/plugin.json        Claude Code Plugin 定義
 ```
 
-`references/taiwan-terms.md` 依需求載入：Agent 需要確認個別術語，或審查疑似中國大陸用語時才讀取，避免固定佔用 context。
+`references/taiwan-terms.md` 依需求載入：Agent 需要確認個別術語，或審查疑似中國大陸用語時才讀取，避免固定占用 context。
 
 `.claude-plugin/` 只有 Claude Code 的 Plugin 安裝路徑會用到；`npx skills add` 與手動 Clone 皆直接讀取根目錄的 `SKILL.md`，不受影響。
 
@@ -113,15 +113,7 @@ Agent 套用規範後，應依 SKILL.md §26 的最終檢查清單逐項確認�
 
 ## 貢獻
 
-修改規範時：
-
-1. 在 `SKILL.md` 對應章節新增規則，並附 Before / After 範例。
-2. 說明適用情境與例外。只給禁令而不給例外，會導致 Agent 機械套用。
-3. 確認 §26 最終檢查清單與 §28 一分鐘版本是否需要同步更新。
-4. 新增術語對照時，更新 `references/taiwan-terms.md`。
-5. 更新 [CHANGELOG.md](CHANGELOG.md)。
-
-本 repo 的所有繁體中文內容都必須符合 SKILL.md 自身的規範。
+修改規範時，完整步驟（含 `§` 交叉引用檢查、版本號同步）見 [CLAUDE.md](CLAUDE.md) 的「修改規範時」一節；本 repo 的所有繁體中文內容都必須符合 `SKILL.md` 自身的規範。
 
 ## 授權
 

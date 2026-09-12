@@ -8,7 +8,7 @@
     "lang": "en",
     "streams": "ask",
     "ask-names": "on",
-    "allow-ag": "ask",
+    "allow-ag": "on",
     "metrics": "off",
     "large-work-minutes": 120
   },
@@ -35,7 +35,7 @@
       "family": "claude",
       "tiers": {
         "best": "claude-opus-5/high",
-        "better": "claude-opus-4-6/high",
+        "better": "claude-opus-5/medium",
         "basic": "claude-sonnet-5/high",
         "cheap": "haiku/high"
       }
