@@ -2,6 +2,18 @@
 
 本專案遵循 [Keep a Changelog](https://keepachangelog.com/) 格式。
 
+## [0.2.0] - 2026-09-12
+
+### Added
+
+- `.claude-plugin/marketplace.json` 與 `.claude-plugin/plugin.json`，支援以 Claude Code Plugin Marketplace 安裝：`claude plugin marketplace add kirinlin/tw-writing` 後 `claude plugin install tw-writing@tw-writing`。
+- README 新增 `npx skills add kirinlin/tw-writing` 安裝方式，支援任何 Skill-aware Agent（Codex、opencode、Cursor 等）。
+
+### Changed
+
+- README 安裝章節依管道拆分為 Plugin Marketplace、`npx skills add`、手動 Clone 三個小節。
+- CLAUDE.md 補充三種安裝管道皆要求 `SKILL.md` 位於 repo 根目錄的限制，避免未來誤將檔案移入 `skills/` 子目錄。
+
 ## [0.1.0] - 2026-08-26
 
 ### Added
@@ -22,4 +34,5 @@
 - Before / After 範例擴充至 12 則，新增台灣用語、修飾範圍歧義、AI 腔調、條件語序與中英文混排。
 - `README.md`、`CLAUDE.md`、MIT `LICENSE`。
 
+[0.2.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.2.0
 [0.1.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.1.0

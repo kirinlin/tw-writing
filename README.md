@@ -1,6 +1,6 @@
 # tw-writing
 
-**台灣繁體中文技術寫作規範，以 Claude Code Skill 形式提供。**
+**台灣繁體中文技術寫作規範，以 Agent Skill 形式提供，支援 Claude Code、Codex、opencode、Cursor 等。**
 
 本 Skill 讓 AI Agent 產生或修改繁體中文內容時，遵循一致的清晰、精確、簡潔標準。內容以 *The Elements of Style* 的寫作原則為基礎，針對繁體中文語法、資訊結構、台灣用語、中英文混排及技術寫作進行本地化。
 
@@ -39,21 +39,42 @@ Technical correctness > Semantic accuracy > Clarity > Consistency > Concision > 
 ## 檔案結構
 
 ```text
-SKILL.md                      完整寫作規範（29 節）
-references/taiwan-terms.md    台灣用語與中國大陸用語完整對照表
+SKILL.md                          完整寫作規範（29 節）
+references/taiwan-terms.md        台灣用語與中國大陸用語完整對照表
+.claude-plugin/marketplace.json   Claude Code Plugin Marketplace 設定
+.claude-plugin/plugin.json        Claude Code Plugin 定義
 ```
 
 `references/taiwan-terms.md` 依需求載入：Agent 需要確認個別術語，或審查疑似中國大陸用語時才讀取，避免固定佔用 context。
 
+`.claude-plugin/` 只有 Claude Code 的 Plugin 安裝路徑會用到；`npx skills add` 與手動 Clone 皆直接讀取根目錄的 `SKILL.md`，不受影響。
+
 ## 安裝
 
-### 個人帳號（所有專案共用）
+### Claude Code（Plugin Marketplace）
+
+```bash
+claude plugin marketplace add kirinlin/tw-writing
+claude plugin install tw-writing@tw-writing
+```
+
+### 任何支援 Skill 的 Agent（Codex、opencode、Cursor 等）
+
+```bash
+npx skills add kirinlin/tw-writing
+```
+
+`npx skills` 會偵測本機已安裝的 Agent，並將 `SKILL.md` 安裝到對應的 Skill 目錄。
+
+### 手動 Clone（Claude Code，不透過 Plugin）
+
+個人帳號（所有專案共用）：
 
 ```bash
 git clone https://github.com/kirinlin/tw-writing.git ~/.claude/skills/tw-writing
 ```
 
-### 單一專案
+單一專案：
 
 ```bash
 git clone https://github.com/kirinlin/tw-writing.git .claude/skills/tw-writing
