@@ -2,6 +2,14 @@
 
 本專案遵循 [Keep a Changelog](https://keepachangelog.com/) 格式。
 
+## [0.3.0] - 2026-09-12
+
+### Added
+
+- §25 新增「外部工具（若可用）」小節：執行環境提供 [`zhtw`](https://github.com/sysprog21/zhtw-mcp) MCP 工具時，Agent 於 §23 六個 Pass 後呼叫 `zhtw` 做機械檢查（標點、字形、中國大陸用語），作為語意判斷之外的補充；程式碼與識別名稱不套用其建議，§14.6 與 MUST NOT 優先；工具不存在時略過，不影響本 Skill 既有運作方式。
+- §26 最終檢查清單新增「外部工具」條目，僅於環境提供 `zhtw` 時適用。
+- §1.4、`README.md` 補充 `references/taiwan-terms.md`（語意查表）與 `zhtw` MCP 工具（機械規則庫）的分工說明，避免混淆或重複維護兩份用語清單。
+
 ## [0.2.1] - 2026-09-12
 
 ### Fixed
@@ -59,6 +67,7 @@
 - Before / After 範例擴充至 12 則，新增台灣用語、修飾範圍歧義、AI 腔調、條件語序與中英文混排。
 - `README.md`、`CLAUDE.md`、MIT `LICENSE`。
 
+[0.3.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.0
 [0.2.1]: https://github.com/kirinlin/tw-writing/releases/tag/v0.2.1
 [0.2.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.2.0
 [0.1.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.1.0

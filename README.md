@@ -100,6 +100,8 @@ Claude Code 會在偵測到繁體中文寫作任務時自動載入本 Skill。�
 
 Agent 套用規範後，應依 SKILL.md §26 的最終檢查清單逐項確認輸出。
 
+若環境另外安裝 [`zhtw-mcp`](https://github.com/sysprog21/zhtw-mcp) MCP 工具，Agent 會在完成寫作後呼叫 `zhtw` 做機械檢查（標點、字形、中國大陸用語），作為語意判斷之外的補充，見 `SKILL.md` §25「外部工具（若可用）」。
+
 ## 修改流程
 
 改寫文字時依序進行六個 Pass，不跳過順序：
