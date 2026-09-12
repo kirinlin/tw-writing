@@ -4,7 +4,7 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: f69fef9 (A-002 fixes, 10 files); not yet pushed.
+Current commit: a05d531 (A-002 fixes, 10 files); not yet pushed.
 
 Tests/scenarios: none (Markdown-only repo; no build or test suite).
 
