@@ -4,7 +4,7 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: a05d531 (A-002 fixes, 10 files); not yet pushed.
+Current commit: 08913a0; pushed to origin/main.
 
 Tests/scenarios: none (Markdown-only repo; no build or test suite).
 
@@ -12,9 +12,9 @@ Configuration: ag.json — schema v7; `better` tier claude model id fixed (`clau
 
 Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings across SKILL.md/CLAUDE.md/README.md/references/taiwan-terms.md/.gitignore/ag.json, self-verified by grep sweep and structural checks, and bumped 0.2.0 to 0.2.1 (CHANGELOG.md, plugin.json, marketplace.json). Completion's external cross-check gate was skipped this round with owner's recorded `skip-review`.
 
-Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the `allow-ag: ask -> on` change was intentional; A-002 fixes not yet committed/pushed.
+Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the `allow-ag: ask -> on` change was intentional.
 
-Next: await owner's answers to A-002's 3 questions, then commit and (if desired) push the A-002 changes.
+Next: await owner's answers to A-002's 3 questions.
 
 Artifacts: .agentflow/A-001-cross-check-review.md.
 
