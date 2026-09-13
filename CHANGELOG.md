@@ -2,6 +2,12 @@
 
 本專案遵循 [Keep a Changelog](https://keepachangelog.com/) 格式。
 
+## [0.3.2] - 2026-09-13
+
+### Changed
+
+- `SKILL.md`、`README.md`、`CLAUDE.md`、`references/taiwan-terms.md`：統一用字，「中國大陸用語」改為「中國用語」、「中國大陸」改為「中國」，全文一致。
+
 ## [0.3.1] - 2026-09-12
 
 ### Fixed
@@ -73,6 +79,8 @@
 - Before / After 範例擴充至 12 則，新增台灣用語、修飾範圍歧義、AI 腔調、條件語序與中英文混排。
 - `README.md`、`CLAUDE.md`、MIT `LICENSE`。
 
+[0.3.2]: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.2
+[0.3.1]: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.1
 [0.3.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.0
 [0.2.1]: https://github.com/kirinlin/tw-writing/releases/tag/v0.2.1
 [0.2.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.2.0

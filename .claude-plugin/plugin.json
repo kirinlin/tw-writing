@@ -1,7 +1,7 @@
 {
   "name": "tw-writing",
   "description": "台灣繁體中文技術寫作規範：清晰、精確、簡潔，並區分台灣用語與中國用語。",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": {
     "name": "Kirin Lin",
     "url": "https://github.com/kirinlin"
