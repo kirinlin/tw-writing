@@ -17,7 +17,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 檔案角色
 
 - `SKILL.md` — 台灣繁體中文寫作規範全文，共 29 節。開頭的 YAML frontmatter（`name`、`description`）決定 Claude Code 何時自動載入本 Skill；修改 `description` 會改變觸發行為。`name` 必須與安裝目錄名一致。
-- `references/taiwan-terms.md` — 台灣用語與中國大陸用語完整對照表。刻意放在 `references/` 而非 `SKILL.md` 內：這是 progressive disclosure，長尾查表資料按需載入，避免每次都占用 context。高頻詞與同形異義詞則保留在 `SKILL.md` §11，因為那是最容易出錯又必須永遠在場的部分。
+- `references/taiwan-terms.md` — 台灣用語與中國用語完整對照表。刻意放在 `references/` 而非 `SKILL.md` 內：這是 progressive disclosure，長尾查表資料按需載入，避免每次都占用 context。高頻詞與同形異義詞則保留在 `SKILL.md` §11，因為那是最容易出錯又必須永遠在場的部分。
 - `.claude-plugin/marketplace.json` — 宣告本 repo 為名稱 `tw-writing` 的 Plugin Marketplace，內含唯一的 plugin 項目，`source` 指向 repo 根目錄（`./`）。
 - `.claude-plugin/plugin.json` — 該 plugin 的 metadata（`name`、`description`、`version`、`author` 等）。`version` 應與 `CHANGELOG.md` 最新版本號一致；兩個 JSON 檔的 `version` 也必須互相一致。
 - `README.md` — 面向 repo 讀者的摘要與安裝說明，內容衍生自 `SKILL.md`。
@@ -36,7 +36,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 3. 檢查 §26 最終檢查清單與 §28 一分鐘版本是否需要同步更新，這兩節是全文規則的濃縮。
 4. 新增或修改章節編號時，全檔搜尋 `§` 交叉引用並一併更新。
 5. 若影響 `README.md` 的摘要表格或檔案結構，一併更新。
-6. 新增或修改台灣用語與中國大陸用語對照時，同步更新 `references/taiwan-terms.md`。
+6. 新增或修改台灣用語與中國用語對照時，同步更新 `references/taiwan-terms.md`。
 7. 更新 `CHANGELOG.md`。
 8. 若因此發佈新版本，同步更新 `.claude-plugin/marketplace.json` 與 `.claude-plugin/plugin.json` 的 `version` 欄位，使其與 `CHANGELOG.md` 一致。
 

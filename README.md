@@ -25,7 +25,7 @@ Technical correctness > Semantic accuracy > Clarity > Consistency > Concision > 
 | 簡潔 | 刪除贅字、「進行＋名詞」改為動詞、避免「相關」與「部分」 |
 | 精確 | 用數字取代模糊程度，區分 Requirement、Capability、Recommendation |
 | 中文語法 | 的／地／得、條件在前結論在後、連接詞與頓號、量詞、避免英文直譯腔 |
-| 台灣用語 | 中國大陸用語對照、同形異義詞（文件／檔案、質量／品質、項目／專案） |
+| 台灣用語 | 中國用語對照、同形異義詞（文件／檔案、質量／品質、項目／專案） |
 | 中英文混排 | 術語保留原文、行內程式碼、中英文之間空格細則、縮寫 |
 | 數字與日期 | 單位空格、千分位、範圍、`YYYY-MM-DD`、時區、版本號 |
 | 標點 | 全形與半形、頓號、引號、括號、破折號、列表結尾標點 |
@@ -40,12 +40,12 @@ Technical correctness > Semantic accuracy > Clarity > Consistency > Concision > 
 
 ```text
 SKILL.md                          完整寫作規範（29 節）
-references/taiwan-terms.md        台灣用語與中國大陸用語完整對照表
+references/taiwan-terms.md        台灣用語與中國用語完整對照表
 .claude-plugin/marketplace.json   Claude Code Plugin Marketplace 設定
 .claude-plugin/plugin.json        Claude Code Plugin 定義
 ```
 
-`references/taiwan-terms.md` 依需求載入：Agent 需要確認個別術語，或審查疑似中國大陸用語時才讀取，避免固定占用 context。
+`references/taiwan-terms.md` 依需求載入：Agent 需要確認個別術語，或審查疑似中國用語時才讀取，避免固定占用 context。
 
 `.claude-plugin/` 只有 Claude Code 的 Plugin 安裝路徑會用到；`npx skills add` 與手動 Clone 皆直接讀取根目錄的 `SKILL.md`，不受影響。
 
@@ -95,12 +95,12 @@ Claude Code 會在偵測到繁體中文寫作任務時自動載入本 Skill。�
 ```
 
 ```text
-用 tw-writing 檢查這份文件有沒有中國大陸用語
+用 tw-writing 檢查這份文件有沒有中國用語
 ```
 
 Agent 套用規範後，應依 SKILL.md §26 的最終檢查清單逐項確認輸出。
 
-若環境另外安裝 [`zhtw-mcp`](https://github.com/sysprog21/zhtw-mcp) MCP 工具，Agent 會在完成寫作後呼叫 `zhtw-mcp` 做機械檢查（標點、字形、中國大陸用語），作為語意判斷之外的補充，見 `SKILL.md` §25「外部工具（若可用）」。
+若環境另外安裝 [`zhtw-mcp`](https://github.com/sysprog21/zhtw-mcp) MCP 工具，Agent 會在完成寫作後呼叫 `zhtw-mcp` 做機械檢查（標點、字形、中國用語），作為語意判斷之外的補充，見 `SKILL.md` §25「外部工具（若可用）」。
 
 ## 修改流程
 
