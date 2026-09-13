@@ -4,19 +4,19 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: e04bbba on main (local only — owner chose to hold, not push, in A-005). origin/main is at 9fa620b (A-003's `int/zhtw-mcp` was merged to main and a follow-up fix bumped 0.3.0 → 0.3.1 in a prior round not recorded here at the time). Local-only commits ahead of origin: 627080e, 04a8959, e04bbba.
+Current commit: e0c7678 on main, pushed to origin/main; tagged `v0.3.2` (annotated, pushed) with a matching GitHub release at https://github.com/kirinlin/tw-writing/releases/tag/v0.3.2.
 
 Tests/scenarios: none (Markdown-only repo; no build or test suite).
 
 Configuration: ag.json — schema v7; validated for claude this round.
 
-Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings and bumped 0.2.0 to 0.2.1; A-003 added SKILL.md §25's conditional "外部工具（若可用）" rule integrating the external `sysprog21/zhtw-mcp` MCP tool as an optional mechanical-check companion, bumped 0.2.1 to 0.3.0, passed a two-round targeted-level external cross-check, was merged to main, and a follow-up fix bumped 0.3.0 to 0.3.1; A-004 renamed `中國大陸用語` → `中國用語` across 7 files (SKILL.md, README.md, CHANGELOG.md, CLAUDE.md, references/taiwan-terms.md, both plugin manifests), passed a one-round targeted-level external cross-check (Outcome/Minimality/Conformance all PASS); A-005 followed up with `中國大陸` → `中國` across SKILL.md, CHANGELOG.md, references/taiwan-terms.md, passed a one-round narrow-level external cross-check (Outcome/Minimality/Conformance all PASS).
+Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings and bumped 0.2.0 to 0.2.1; A-003 added SKILL.md §25's conditional "外部工具（若可用）" rule integrating the external `sysprog21/zhtw-mcp` MCP tool as an optional mechanical-check companion, bumped 0.2.1 to 0.3.0, passed a two-round targeted-level external cross-check, was merged to main, and a follow-up fix bumped 0.3.0 to 0.3.1; A-004 renamed `中國大陸用語` → `中國用語` across 7 files, passed a targeted-level external cross-check; A-005 followed up with `中國大陸` → `中國` across 3 files, passed a narrow-level external cross-check; A-006 released v0.3.2 (CHANGELOG entry, version bump in both plugin manifests, `兩岸` → `台灣與中國` alignment in SKILL.md §11.2), passed a consolidated external cross-check, and is now tagged and released on GitHub.
 
-Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the mid-A-002 `allow-ag` change from `ask` to `on`, not made by this session, was intentional; A-002's 3 questions still unanswered; A-005 flagged (non-blocking, parked for owner) a pre-existing 兩岸-vs-台灣與中國 wording divergence between SKILL.md §11.2 and references/taiwan-terms.md §1, and that CHANGELOG.md entries get edited in place rather than getting new entries for these renames.
+Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the mid-A-002 `allow-ag` change from `ask` to `on`, not made by this session, was intentional; A-002's 3 questions still unanswered; A-006 noted (non-blocking) that CHANGELOG entries get edited in place rather than getting new entries when a rename's own description needs a correction — a stylistic choice, not flagged as wrong.
 
-Next: await owner's answers to A-002's questions and A-005's two questions (align 兩岸/台灣與中國 wording? push the three local-only commits now?).
+Next: await owner's answers to A-002's 3 still-open questions. No other open work.
 
-Artifacts: .agentflow/A-001-cross-check-review.md, .agentflow/A-003-cross-check-review.md, .agentflow/A-004-cross-check-review.md, .agentflow/A-005-cross-check-review.md.
+Artifacts: .agentflow/A-001-cross-check-review.md, .agentflow/A-003-cross-check-review.md, .agentflow/A-004-cross-check-review.md, .agentflow/A-005-cross-check-review.md, .agentflow/A-006-cross-check-review.md.
 
 Archived eras: none.
 
@@ -341,5 +341,69 @@ Cross-check implementation: e04bbba9e180f6162b3104391dd1c5e57b91c964
 ---
 
 # → Ask / A-006
+
+tag and release v0.3.2
+
++ s/兩岸/台灣與中國/g
+
++ re-tag and re-release v0.3.2
+
+## [RUN-001] Event — 2026-09-13 (during round A-006)
+
+- Route: direct. Owner's own global CLAUDE.md establishes the release procedure as a standing three-step process (update CHANGELOG, git tag -a, gh release create), and the request names the exact target version — mechanical, well-specified work.
+- Added CHANGELOG.md `## [0.3.2]` entry (Changed: the two 中國大陸(用語) → 中國(用語) renames from A-004/A-005) plus its `[0.3.2]` link definition, and filled in the previously-missing `[0.3.1]` link definition (v0.3.1's tag/release already exist on GitHub). Bumped `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` version 0.3.1 -> 0.3.2 per CLAUDE.md's release-sync convention.
+- This request supersedes A-005's "hold, don't push" answer: releasing v0.3.2 requires the held commits (627080e, 04a8959, e04bbba, f5b9218) to reach origin, so this round will push main and the new tag as part of "tag and release".
+
+## [RUN-002] Event — 2026-09-13 (during round A-006)
+
+- Owner sent a mid-round follow-up (`s/兩岸/台灣與中國/g`), answering A-005's parked wording-divergence question. Applied it directly to SKILL.md:895 (commit b672cca), the only live occurrence.
+- Finalized the [0.3.2] CHANGELOG entry (commit e0c7678): named the plugin manifests explicitly and added a bullet for the 兩岸 alignment, per the version-bump commit's own cross-check accuracy note.
+- Dispatched one consolidated external read-only reviewer against the round's cumulative diff (f5b9218..e0c7678, three commits), external-runner-v1, `claude -p --restricted --permission-prompts none`, claude-opus-5/medium. Result: Outcome/Minimality/Conformance all PASS; clone unmodified; exit 0.
+- Host gate: PASS. Independently re-verified version consistency and the two rename targets against the working tree.
+- Saved review record at .agentflow/A-006-cross-check-review.md.
+
+## [RUN-003] Event — 2026-09-13 (during round A-006)
+
+- Owner sent "re-tag and re-release v0.3.2" mid-round; no v0.3.2 tag/release existed yet at that point (gh release list showed v0.3.1 as latest), so treated it as confirmation to proceed with the tag/release now that the cross-check passed and the 兩岸 alignment/CHANGELOG finalization had landed.
+- Pushed main to origin (9fa620b..e0c7678, 7 commits: the A-004/A-005 renames, their devlog records, the version bump, the 兩岸 rename, and the finalized CHANGELOG entry). This supersedes A-005's earlier "hold" answer, per this round's explicit release request.
+- Created annotated tag `v0.3.2` (`v0.3.2: unify 中國(用語) terminology, align 兩岸/台灣與中國 wording`) and pushed it.
+- Created GitHub release v0.3.2 via `gh release create`, notes taken verbatim from the CHANGELOG `[0.3.2]` entry: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.2
+
+# ← Reply / A-006
+
+* _2026-09-13 09:56 (Sonnet 5)_
+
+## [SUMMARY]
+
+- Released v0.3.2: CHANGELOG entry + version bump across both plugin manifests, plus the mid-round `兩岸` → `台灣與中國` alignment you asked for.
+- Consolidated external cross-check (Outcome/Minimality/Conformance all PASS) over the round's three commits.
+- Pushed `main` to origin (this also carries the three earlier held commits from A-004/A-005), tagged `v0.3.2`, and created the GitHub release.
+
+## [FINAL REPORT]
+
+### Task: `tag and release v0.3.2` (plus mid-round `s/兩岸/台灣與中國/g`, and the confirmation `re-tag and re-release v0.3.2`)
+
+**Succeeded.**
+
+1. Added a `## [0.3.2] - 2026-09-13` CHANGELOG entry covering both A-004/A-005's rename and this round's `兩岸` alignment; added the missing `[0.3.1]` link definition along with a new `[0.3.2]` one. Bumped `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` to `0.3.2` (commit `6785201`).
+2. Applied `s/兩岸/台灣與中國/g` to `SKILL.md:895` (the only live occurrence) — this was A-005's parked question, now resolved (commit `b672cca`).
+3. Finalized the CHANGELOG entry to name the plugin manifests explicitly and add the 兩岸 bullet, per the cross-check's accuracy note (commit `e0c7678`).
+4. One consolidated external read-only cross-check over all three commits: Outcome/Minimality/Conformance all PASS, no rework needed.
+5. Pushed `main` to origin (`9fa620b..e0c7678`, 7 commits — this also brings up the A-004/A-005 renames you'd earlier asked to hold; releasing supersedes that hold, as flagged in this round's RUN log).
+6. Created annotated tag `v0.3.2` and pushed it.
+7. Created the GitHub release: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.2
+
+Cross-check review: .agentflow/A-006-cross-check-review.md
+Cross-check implementation: e0c7678ff7e15a01e90b2f320c13b10da0e23008
+
+**Status:** fully released. `main`, the tag, and the GitHub release are all in sync at `e0c7678` / `v0.3.2`.
+
+## Questions (batched — each with a suggested default)
+
+- None.
+
+---
+
+# → Ask / A-007
 
 +
