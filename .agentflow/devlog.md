@@ -4,19 +4,19 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: 627080e on main (not yet pushed — awaiting owner confirmation per A-004's suggested-default question). origin/main is at 9fa620b (A-003's `int/zhtw-mcp` was merged to main and a follow-up fix bumped 0.3.0 → 0.3.1 in a prior round not recorded here at the time).
+Current commit: e04bbba on main (local only — owner chose to hold, not push, in A-005). origin/main is at 9fa620b (A-003's `int/zhtw-mcp` was merged to main and a follow-up fix bumped 0.3.0 → 0.3.1 in a prior round not recorded here at the time). Local-only commits ahead of origin: 627080e, 04a8959, e04bbba.
 
 Tests/scenarios: none (Markdown-only repo; no build or test suite).
 
 Configuration: ag.json — schema v7; validated for claude this round.
 
-Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings and bumped 0.2.0 to 0.2.1; A-003 added SKILL.md §25's conditional "外部工具（若可用）" rule integrating the external `sysprog21/zhtw-mcp` MCP tool as an optional mechanical-check companion, bumped 0.2.1 to 0.3.0, passed a two-round targeted-level external cross-check, was merged to main, and a follow-up fix bumped 0.3.0 to 0.3.1; A-004 renamed `中國大陸用語` → `中國用語` across 7 files (SKILL.md, README.md, CHANGELOG.md, CLAUDE.md, references/taiwan-terms.md, both plugin manifests), passed a one-round targeted-level external cross-check (Outcome/Minimality/Conformance all PASS).
+Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings and bumped 0.2.0 to 0.2.1; A-003 added SKILL.md §25's conditional "外部工具（若可用）" rule integrating the external `sysprog21/zhtw-mcp` MCP tool as an optional mechanical-check companion, bumped 0.2.1 to 0.3.0, passed a two-round targeted-level external cross-check, was merged to main, and a follow-up fix bumped 0.3.0 to 0.3.1; A-004 renamed `中國大陸用語` → `中國用語` across 7 files (SKILL.md, README.md, CHANGELOG.md, CLAUDE.md, references/taiwan-terms.md, both plugin manifests), passed a one-round targeted-level external cross-check (Outcome/Minimality/Conformance all PASS); A-005 followed up with `中國大陸` → `中國` across SKILL.md, CHANGELOG.md, references/taiwan-terms.md, passed a one-round narrow-level external cross-check (Outcome/Minimality/Conformance all PASS).
 
-Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the mid-A-002 `allow-ag` change from `ask` to `on`, not made by this session, was intentional; A-002's 3 questions still unanswered; A-004 flagged (non-blocking, parked for owner) that a differently-worded `中國大陸` prefix remains in a few places outside this Ask's scope.
+Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the mid-A-002 `allow-ag` change from `ask` to `on`, not made by this session, was intentional; A-002's 3 questions still unanswered; A-005 flagged (non-blocking, parked for owner) a pre-existing 兩岸-vs-台灣與中國 wording divergence between SKILL.md §11.2 and references/taiwan-terms.md §1, and that CHANGELOG.md entries get edited in place rather than getting new entries for these renames.
 
-Next: await owner's answers to A-002's questions, and A-004's two questions (push `627080e`? extend the rename to the parked `中國大陸` occurrences?).
+Next: await owner's answers to A-002's questions and A-005's two questions (align 兩岸/台灣與中國 wording? push the three local-only commits now?).
 
-Artifacts: .agentflow/A-001-cross-check-review.md, .agentflow/A-003-cross-check-review.md, .agentflow/A-004-cross-check-review.md.
+Artifacts: .agentflow/A-001-cross-check-review.md, .agentflow/A-003-cross-check-review.md, .agentflow/A-004-cross-check-review.md, .agentflow/A-005-cross-check-review.md.
 
 Archived eras: none.
 
@@ -274,5 +274,72 @@ Cross-check implementation: 627080e85b39071716de164462c251185f32dfd8
 ---
 
 # → Ask / A-005
+
+Answers to A-004's questions: push `627080e`? — No, leave local. Extend the rename to the parked `中國大陸` occurrences? — s/中國大陸/中國/g
+
+## [RUN-001] Event — 2026-09-13 (during round A-005)
+
+- Route: direct. Owner declined to push `627080e` for now (leave local), and asked for a follow-up global rename `s/中國大陸/中國/g` covering the occurrences A-004 parked.
+- Found 9 remaining `中國大陸` occurrences across 3 live files: SKILL.md (3), references/taiwan-terms.md (5), CHANGELOG.md (1). The 6 hits in `.agentflow/devlog.md`, `.agentflow/A-001-cross-check-review.md`, `.agentflow/A-003-cross-check-review.md`, `.agentflow/A-004-cross-check-review.md` are historical review-round records quoting past terms/state — left unchanged, same rationale as A-004.
+- Applied `s/中國大陸/中國/g` to the 3 live files; verified each changed sentence still reads as natural Traditional Chinese.
+
+## [RUN-002] Event — 2026-09-13 (during round A-005)
+
+- Committed as e04bbba with Assisted-by trailer.
+- cross-check-plan.js facts (changed_files: 3, changed_lines: 18, behavior/trust/broad/consequential: false) selected level: narrow (all three changed files are `.md`, qualifying as documentation-only).
+- Dispatched external read-only reviewer (external-runner-v1, `claude -p --restricted --permission-prompts none`, claude-opus-5/medium) against e04bbba, one round, narrow level. Result: Outcome/Minimality/Conformance all PASS; clone unmodified; exit 0.
+- Two non-blocking observations parked (兩岸 vs 台灣與中國 pre-existing divergence in SKILL.md §11.2 vs taiwan-terms.md §1; CHANGELOG.md:42 edited in-place with no new entry, same handling as A-004).
+- Host gate: PASS. Independently re-verified via `rg 中國大陸` and direct read of SKILL.md:895.
+- Saved review record at .agentflow/A-005-cross-check-review.md; removed working diff scratch file.
+
+# ← Reply / A-005
+
+* _2026-09-13 09:48 (Sonnet 5)_
+
+## [SUMMARY]
+
+- Recorded your answers: leave `627080e`/`04a8959` unpushed; do the follow-up rename `s/中國大陸/中國/g`.
+- Applied the follow-up rename to SKILL.md, CHANGELOG.md, references/taiwan-terms.md (9 occurrences, 8 lines). Committed as `e04bbba`.
+- Narrow-level external cross-check: Outcome/Minimality/Conformance all PASS. Host gate: PASS.
+- Two small non-blocking observations parked below.
+
+## [FINAL REPORT]
+
+### Task 1: push `627080e`/`04a8959`?
+
+**Answered — no.** Left both commits local, as you asked.
+
+### Task 2: `s/中國大陸/中國/g` follow-up rename
+
+**Succeeded.**
+
+Found 9 remaining `中國大陸` occurrences across 3 live files (SKILL.md ×3, references/taiwan-terms.md ×5, CHANGELOG.md ×1). Applied the substitution to all of them. Left the same `.agentflow/` historical logs untouched as before (devlog.md, A-001/A-003/A-004 cross-check reviews), for the same reason: they quote the term as it stood at the time.
+
+Committed as `e04bbba` with an `Assisted-by` trailer.
+
+**Cross-check**: cross-check-plan.js selected "narrow" this time (all three changed files are `.md`, so it qualifies as documentation-only, unlike A-004 which also touched `.json` manifests). One round, disposable no-remote clone, `claude -p --restricted` at `claude-opus-5/medium`. Outcome/Minimality/Conformance all PASS on the first round.
+
+Cross-check review: .agentflow/A-005-cross-check-review.md
+Cross-check implementation: e04bbba9e180f6162b3104391dd1c5e57b91c964
+
+**Parked (non-blocking, not actioned):**
+- `SKILL.md:895` says 「以下詞在**兩岸**都存在」 while its `references/taiwan-terms.md:13` counterpart now says 「在台灣與中國都存在」 — a pre-existing wording difference (`兩岸` never contained the string this rename targeted), not something either Ask authorized touching.
+- `CHANGELOG.md:42` was edited in place inside an already-released version entry, with no new changelog entry added for either rename — same handling as A-004; flagging only so you can confirm that's what you want going forward.
+
+**Status:** both renames are committed locally (`627080e`, `04a8959`, `e04bbba`); none pushed, per your answer above.
+
+## Questions (batched — each with a suggested default)
+
+- Should `SKILL.md`'s 「兩岸」 wording be aligned with `references/taiwan-terms.md`'s 「台灣與中國」 (or vice versa) for consistency, in a follow-up?
+- Suggested default: no — leave as-is; both are correct Chinese and this is a separate, pre-existing stylistic choice outside these two Asks.
+- ans:
+
+- Ready to push all three local commits (`627080e`, `04a8959`, `e04bbba`) to origin/main now, or still hold?
+- Suggested default: hold, until you say otherwise.
+- ans:
+
+---
+
+# → Ask / A-006
 
 +
