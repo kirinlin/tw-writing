@@ -39,7 +39,7 @@
 
 - `README.md` 的「修改規範時」步驟改為指向 `CLAUDE.md` 對應章節，避免兩份清單各自增修後失去同步（原本 `README.md` 缺少 `CLAUDE.md` 才有的 `§` 交叉引用檢查步驟）。
 - `CLAUDE.md` 的「修改規範時」步驟新增「更新 `references/taiwan-terms.md`」一項，並補充子節編號慣例的例外（§23、§24 等不編號的 H3 不受 `### N.M` 規則限制）。
-- `references/taiwan-terms.md` 開頭新增說明：左右欄相同的列代表台灣與中國大陸寫法一致，審查命中不必改寫。
+- `references/taiwan-terms.md` 開頭新增說明：左右欄相同的列代表台灣與中國寫法一致，審查命中不必改寫。
 
 ## [0.2.0] - 2026-09-12
 
