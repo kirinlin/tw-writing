@@ -4,19 +4,19 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: 3e3cd7d; pushed to origin/int/zhtw-mcp (new upstream branch, created this round per A-003's suggested-default answer since the owner had not yet replied when the completion gate required this fact; origin/main remains at 28d95a0).
+Current commit: 627080e on main (not yet pushed — awaiting owner confirmation per A-004's suggested-default question). origin/main is at 9fa620b (A-003's `int/zhtw-mcp` was merged to main and a follow-up fix bumped 0.3.0 → 0.3.1 in a prior round not recorded here at the time).
 
 Tests/scenarios: none (Markdown-only repo; no build or test suite).
 
 Configuration: ag.json — schema v7; validated for claude this round.
 
-Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings and bumped 0.2.0 to 0.2.1; A-003 added SKILL.md §25's conditional "外部工具（若可用）" rule integrating the external `sysprog21/zhtw-mcp` MCP tool as an optional mechanical-check companion (with matching §26/§1.4/README updates), bumped 0.2.1 to 0.3.0, and passed a two-round targeted-level external cross-check (round 1: Outcome BLOCKING on an unscoped rule that could have overridden §14.6/MUST-NOT-8/11 code protections; fixed; round 2: Outcome/Minimality/Conformance all PASS).
+Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings and bumped 0.2.0 to 0.2.1; A-003 added SKILL.md §25's conditional "外部工具（若可用）" rule integrating the external `sysprog21/zhtw-mcp` MCP tool as an optional mechanical-check companion, bumped 0.2.1 to 0.3.0, passed a two-round targeted-level external cross-check, was merged to main, and a follow-up fix bumped 0.3.0 to 0.3.1; A-004 renamed `中國大陸用語` → `中國用語` across 7 files (SKILL.md, README.md, CHANGELOG.md, CLAUDE.md, references/taiwan-terms.md, both plugin manifests), passed a one-round targeted-level external cross-check (Outcome/Minimality/Conformance all PASS).
 
-Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the mid-A-002 `allow-ag` change from `ask` to `on`, not made by this session, was intentional; A-002's 3 questions still unanswered.
+Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the mid-A-002 `allow-ag` change from `ask` to `on`, not made by this session, was intentional; A-002's 3 questions still unanswered; A-004 flagged (non-blocking, parked for owner) that a differently-worded `中國大陸` prefix remains in a few places outside this Ask's scope.
 
-Next: await owner's answers to A-002's questions and confirmation the A-003 push default was acceptable.
+Next: await owner's answers to A-002's questions, and A-004's two questions (push `627080e`? extend the rename to the parked `中國大陸` occurrences?).
 
-Artifacts: .agentflow/A-001-cross-check-review.md, .agentflow/A-003-cross-check-review.md.
+Artifacts: .agentflow/A-001-cross-check-review.md, .agentflow/A-003-cross-check-review.md, .agentflow/A-004-cross-check-review.md.
 
 Archived eras: none.
 
@@ -216,5 +216,63 @@ Implementation: committed as `da340f8`, working tree otherwise clean apart from 
 ---
 
 # → Ask / A-004
+
+s/中國大陸用語/中國用語/g
+
+## [RUN-001] Event — 2026-09-13 (during round A-004)
+
+- Route: direct. Global terminology rename `s/中國大陸用語/中國用語/g` across SKILL.md, README.md, CHANGELOG.md, CLAUDE.md, references/taiwan-terms.md, and both plugin manifests (34 occurrences found, 31 replaced across 7 files). Left `.agentflow/devlog.md` and `.agentflow/A-003-cross-check-review.md` unchanged — those are historical review records quoting the old term as it stood at the time; rewriting them would misrepresent history.
+- cross-check-plan.js facts (changed_files: 7, changed_lines: 62, behavior/trust/broad/consequential: false) selected level: targeted (two of the seven changed files are `.json` manifests, so the change is not documentation-only by the tool's pattern, even though it is a pure text substitution).
+- Committed as 627080e with Assisted-by trailer.
+
+## [RUN-002] Event — 2026-09-13 (during round A-004)
+
+- Dispatched external read-only reviewer (external-runner-v1: disposable no-remote clone, `claude -p --restricted --permission-prompts none`, claude-opus-5/medium, the `better` tier) against implementation commit 627080e, one round, targeted level. Diff embedded verbatim in the prompt (from `git show`) since `--restricted` removes Bash. Result: Outcome/Minimality/Conformance all PASS; clone unmodified (no writes); exit 0.
+- Non-blocking observation raised: several nearby-but-different strings using the longer `中國大陸` prefix (`中國大陸慣用術語`, `中國大陸語意`, etc. in SKILL.md/CHANGELOG.md/references/taiwan-terms.md) were correctly left untouched — different exact string than the Ask targeted, so touching them would be scope creep. Parked for the owner, not actioned.
+- Host gate: PASS. Independently re-ran `rg 中國大陸` against the working tree and confirmed every location the reviewer cited is real.
+- Saved review record at .agentflow/A-004-cross-check-review.md; removed working scratch files (brief, diff) not meant for the committed repo.
+
+# ← Reply / A-004
+
+* _2026-09-13 09:45 (Sonnet 5)_
+
+## [SUMMARY]
+
+- Renamed `中國大陸用語` → `中國用語` across SKILL.md, README.md, CHANGELOG.md, CLAUDE.md, references/taiwan-terms.md, and both plugin manifests. Historical `.agentflow` logs left untouched.
+- Committed as `627080e`. Targeted-level external cross-check: Outcome/Minimality/Conformance all PASS. Host gate: PASS.
+- One non-blocking observation parked below (not part of this Ask).
+
+## [FINAL REPORT]
+
+### Task: `ad s/中國大陸用語/中國用語/g` — global rename
+
+**Succeeded.**
+
+Found 34 occurrences across 9 files. Replaced 31 of them (7 files: `SKILL.md`, `README.md`, `CHANGELOG.md`, `CLAUDE.md`, `references/taiwan-terms.md`, `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`). Deliberately left 3 occurrences in `.agentflow/devlog.md` and `.agentflow/A-003-cross-check-review.md` unchanged — those are historical review-round logs quoting the old term as it stood at the time; rewriting them would misrepresent history rather than serve the rename.
+
+Committed as `627080e` with an `Assisted-by: Claude:claude-sonnet-5` trailer (this repo's git-attribution hook rejects the `Claude-Session:` trailer form and requires `Assisted-by` instead).
+
+**Cross-check** (changed source/config touched the completion gate; cross-check-plan.js selected "targeted", since two of the seven changed files are `.json` manifests and so the change isn't "documentation-only" by the tool's own file-pattern check, even though it is a pure text substitution): one round, a fresh disposable no-remote clone reviewed read-only by `claude -p --restricted` at `claude-opus-5/medium`. Outcome/Minimality/Conformance all PASS on the first round; no rework needed.
+
+Cross-check review: .agentflow/A-004-cross-check-review.md
+Cross-check implementation: 627080e85b39071716de164462c251185f32dfd8
+
+**Parked (not actioned — outside this Ask's scope):** the reviewer flagged that the repo still uses the longer, differently-worded `中國大陸` prefix in a handful of places — `中國大陸慣用術語` (SKILL.md:844, 1851), `中國大陸語意` (SKILL.md:897, references/taiwan-terms.md:15), and the descriptive prose in references/taiwan-terms.md (lines 5, 7, 13, 446) and CHANGELOG.md:42 that explains the table convention. These are a different exact string than the one this Ask's sed command targeted, so leaving them untouched is correct minimality — but if you'd like the same shortening applied there too, say so and I'll do a follow-up round.
+
+**Status:** committed (`627080e`); not yet pushed — a normal reviewed documentation change with no open concerns, but push is a shared/visible action I don't take without confirmation.
+
+## Questions (batched — each with a suggested default)
+
+- Push `627080e` to `origin/main` now?
+- Suggested default: yes — it's a small, reviewed, git-reversible documentation change with no open concerns.
+- ans:
+
+- Should the parked `中國大陸` occurrences (a different string from what this Ask targeted) also be shortened to match, in a follow-up?
+- Suggested default: no — leave them as-is unless you specifically want that broader consistency pass; they weren't part of this Ask.
+- ans:
+
+---
+
+# → Ask / A-005
 
 +
