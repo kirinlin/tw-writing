@@ -6,7 +6,8 @@
 
 ### Changed
 
-- `SKILL.md`、`README.md`、`CLAUDE.md`、`references/taiwan-terms.md`：統一用字，「中國大陸用語」改為「中國用語」、「中國大陸」改為「中國」，全文一致。
+- `SKILL.md`、`README.md`、`CLAUDE.md`、`references/taiwan-terms.md`、`.claude-plugin/plugin.json`、`.claude-plugin/marketplace.json`：統一用字，「中國大陸用語」改為「中國用語」、「中國大陸」改為「中國」，全文一致。
+- `SKILL.md` §11.2：「兩岸」改為「台灣與中國」，與 `references/taiwan-terms.md` §1 的既有用字一致。
 
 ## [0.3.1] - 2026-09-12
 
