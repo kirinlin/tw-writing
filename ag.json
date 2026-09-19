@@ -5,7 +5,7 @@
     "workspace-dir": ".agentflow",
     "cli-provider": "off",
     "auto-reply": "on",
-    "lang": "en",
+    "lang": "zh-tw",
     "streams": "ask",
     "ask-names": "on",
     "allow-ag": "on",
