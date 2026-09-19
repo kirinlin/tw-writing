@@ -41,6 +41,8 @@ Technical correctness > Semantic accuracy > Clarity > Consistency > Concision > 
 ```text
 SKILL.md                          完整寫作規範（29 節）
 references/taiwan-terms.md        台灣用語與中國用語完整對照表
+AGENTS.md                         AI Agent 共用維護指引
+CLAUDE.md                         Claude Code 專用指引
 .claude-plugin/marketplace.json   Claude Code Plugin Marketplace 設定
 .claude-plugin/plugin.json        Claude Code Plugin 定義
 ```
@@ -115,7 +117,7 @@ Agent 套用規範後，應依 SKILL.md §26 的最終檢查清單逐項確認�
 
 ## 貢獻
 
-修改規範時，完整步驟（含 `§` 交叉引用檢查、版本號同步）見 [CLAUDE.md](CLAUDE.md) 的「修改規範時」一節；本 repo 的所有繁體中文內容都必須符合 `SKILL.md` 自身的規範。
+修改規範時，完整步驟（包括 `§` 交叉引用檢查與版本號同步）見 [AGENTS.md](AGENTS.md) 的「修改規範時」一節。Claude Code 專用的 Plugin Marketplace 維護規則見 [CLAUDE.md](CLAUDE.md)。本 repository 的所有繁體中文內容都必須符合 `SKILL.md` 的規範。
 
 ## 授權
 

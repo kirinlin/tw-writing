@@ -2,6 +2,17 @@
 
 本專案遵循 [Keep a Changelog](https://keepachangelog.com/) 格式。
 
+## [Unreleased]
+
+### Added
+
+- 新增 `AGENTS.md`，集中管理所有 AI Agent 共用的專案結構、編輯規範與維護慣例。
+
+### Changed
+
+- `CLAUDE.md` 僅保留 Claude Code 專用的 Plugin Marketplace 安裝與維護指引，並改為引用 `AGENTS.md` 的共用規範。
+- `README.md` 的檔案結構與貢獻說明新增 `AGENTS.md`，並分開說明共用指引與 Claude Code 專用指引。
+
 ## [0.3.2] - 2026-09-13
 
 ### Changed
