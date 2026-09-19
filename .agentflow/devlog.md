@@ -4,24 +4,23 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: e0c7678 on main, pushed to origin/main; tagged `v0.3.2` (annotated, pushed) with a matching GitHub release at https://github.com/kirinlin/tw-writing/releases/tag/v0.3.2.
+Current commit: `e8302a4` implementation 與本輪 devlog 紀錄已提交至 `main`，並推送至 `origin/main`.
 
-Tests/scenarios: none (Markdown-only repo; no build or test suite).
+Tests/scenarios: `git diff --check` 通過；Markdown-only repository，沒有建置流程或測試套件.
 
-Configuration: ag.json — schema v7; validated for claude this round.
+Configuration: ag.json — schema v7; validated for codex this round.
 
-Proven: A-001's brownfield baseline cross-check passed (Outcome/Minimality/Conformance all PASS); A-002 applied direct-route fixes for 17 of its 19 parked findings and bumped 0.2.0 to 0.2.1; A-003 added SKILL.md §25's conditional "外部工具（若可用）" rule integrating the external `sysprog21/zhtw-mcp` MCP tool as an optional mechanical-check companion, bumped 0.2.1 to 0.3.0, passed a two-round targeted-level external cross-check, was merged to main, and a follow-up fix bumped 0.3.0 to 0.3.1; A-004 renamed `中國大陸用語` → `中國用語` across 7 files, passed a targeted-level external cross-check; A-005 followed up with `中國大陸` → `中國` across 3 files, passed a narrow-level external cross-check; A-006 released v0.3.2 (CHANGELOG entry, version bump in both plugin manifests, `兩岸` → `台灣與中國` alignment in SKILL.md §11.2), passed a consolidated external cross-check, and is now tagged and released on GitHub.
+Proven: `AGENTS.md` 已集中共用指引；`CLAUDE.md` 僅保留 Claude Code 專用內容；`README.md` 與 `CHANGELOG.md` 已同步.
 
-Open: M-4's 4 remaining self-referencing rows (parked, no clear fix specified); O-2's `/skills` command claim (unverifiable offline); whether the mid-A-002 `allow-ag` change from `ask` to `on`, not made by this session, was intentional; A-002's 3 questions still unanswered; A-006 noted (non-blocking) that CHANGELOG entries get edited in place rather than getting new entries when a rename's own description needs a correction — a stylistic choice, not flagged as wrong.
+Open: `ag.json` 的 `lang: zh-tw` 變更仍未提交，且未納入本輪交付；A-002 的 3 個既有問題仍未回答.
 
-Next: await owner's answers to A-002's 3 still-open questions. No other open work.
+Next: 等待使用者下一項工作.
 
-Artifacts: .agentflow/A-001-cross-check-review.md, .agentflow/A-003-cross-check-review.md, .agentflow/A-004-cross-check-review.md, .agentflow/A-005-cross-check-review.md, .agentflow/A-006-cross-check-review.md.
+Artifacts: none.
 
 Archived eras: none.
 
 Streams: none.
-
 ---
 
 # → Ask / A-001
@@ -405,5 +404,45 @@ Cross-check implementation: e0c7678ff7e15a01e90b2f320c13b10da0e23008
 ---
 
 # → Ask / A-007
+
++ devlog
+
+## [RUN-001] Event — 2026-09-19 11:10:01 +0800 (A-007)
+
+- 已確認 `e8302a4` 完成共用指引移轉：新增 `AGENTS.md`、精簡 `CLAUDE.md`，並同步更新 `README.md` 與 `CHANGELOG.md`。
+
+- `git diff --check` 在 implementation commit 前通過；repository 僅含 Markdown 文件，沒有建置流程或測試套件。
+
+- `main` 比 `origin/main` 多 `e8302a4`；fetch 後確認沒有 remote-only commit。`ag.json` 的未提交 `lang: zh-tw` 變更不屬於本輪提交。
+
+# ← Reply / A-007
+
+* _2026-09-19 11:10:01 +0800 (codex/unknown)_
+
+## [SUMMARY]
+
+- 已將 Agent 指引移轉工作記錄至 devlog，並交付 `e8302a4` 與本輪 devlog commit。
+
+- `ag.json` 的 `lang: zh-tw` 變更未納入本輪提交，仍保留在工作目錄。
+
+## [FINAL REPORT]
+
+1. **更新 devlog**
+
+   - 成功：記錄 `AGENTS.md`、`CLAUDE.md`、`README.md` 與 `CHANGELOG.md` 的變更結果。
+
+   - 證據：implementation commit 是 `e8302a4`（`docs: migrate shared guidance to AGENTS.md`）。
+
+   - 驗證：`git diff --check` 已通過。此 repository 沒有建置流程或測試套件，因此未執行測試。
+
+   - 交付：推送 `main` 時會包含 `e8302a4` 與本輪 devlog commit。
+
+## Questions (batched — each with a suggested default)
+
+- None.
+
+---
+
+# → Ask / A-008 (Kirin Lin)
 
 +
