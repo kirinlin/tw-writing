@@ -4,19 +4,19 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: main 已合併 d5fd786 與 984163e；紀錄與設定由本輪收尾提交並交付.
+Current commit: v0.10.07 發佈提交 59c619a 已推送；本輪發佈紀錄另行收尾提交.
 
-Tests/scenarios: 前輪文件檢查與獨立審查 PASS；合併無衝突，未提交內容雜湊一致，設定遷移比對與 diff 檢查通過.
+Tests/scenarios: JSON、版本一致性、diff 檢查通過；遠端 tag 與正式 GitHub Release 已確認.
 
 Configuration: ag.json — schema v8; validated for codex this round.
 
-Proven: Skill 改寫已合併回 main，前輪紀錄與本輪收尾一併保存.
+Proven: v0.10.07 正式發佈完成，CHANGELOG 與兩份 Plugin manifest 同步.
 
 Open: none.
 
 Next: 等待使用者下一項工作.
 
-Artifacts: .agentflow/artifacts/A-008-rewrite/review.md.
+Artifacts: https://github.com/kirinlin/tw-writing/releases/tag/v0.10.07.
 
 Archived eras: none.
 
@@ -548,5 +548,53 @@ Cross-check implementation: e0c7678ff7e15a01e90b2f320c13b10da0e23008
 ---
 
 # → Ask / A-010 (Kirin Lin)
+
++ # Context from my IDE setup:
+
++ ## Active file: CHANGELOG.md
+
++ ## Open tabs:
+  - devlog.md: .agentflow/devlog.md
+  - SKILL.md: SKILL.md
+  - ag.json: ag.json
+
++ ## My request:
+  發布版本 0.10.07
+
+---
+
+## [RUN-001] Event — 2026-10-07 10:21:03 +0800 (A-010)
+
+- 版本資料與 CHANGELOG 同步為使用者指定的 0.10.07；JSON、版本一致性與 diff 檢查通過。發佈提交為 59c619a。
+- 已推送 main 與 annotated tag v0.10.07，並以 CHANGELOG 內容建立最新正式 GitHub Release。
+- 遠端 tag 解參照為 59c619ac2f0d057932159320d6a808ef6db2edee；Release 查詢確認非草稿、非預發佈。
+
+# ← Reply / A-010
+
+* _2026-10-07 10:21:03 +0800 (codex/unknown)_
+
+## [SUMMARY]
+
+- 已正式發佈 v0.10.07，版本資料、CHANGELOG、遠端 tag 與 GitHub Release 均已同步。
+
+## [FINAL REPORT]
+
+1. 「發布版本 0.10.07」
+
+   - 成功：[v0.10.07](https://github.com/kirinlin/tw-writing/releases/tag/v0.10.07) 已發佈為最新正式版本，不是草稿或預發佈版本。
+
+   - 更新：CHANGELOG 將既有 Unreleased 內容歸入 2026-10-07 的 0.10.07，兩份 Plugin manifest 同步為使用者指定的 0.10.07。發佈說明取自該版本的 CHANGELOG。
+
+   - 交付：發佈提交 59c619a 已推送至 origin/main，annotated tag v0.10.07 已推送。遠端 tag 解參照後等於 59c619ac2f0d057932159320d6a808ef6db2edee。
+
+   - 驗證：JSON 解析、三處版本一致性與 git diff --check 通過；GitHub 查詢確認 tagName、isDraft=false、isPrerelease=false。產品規則未變更，重用前輪獨立審查與文件檢查。
+
+## Questions (batched — each with a suggested default)
+
+- None.
+
+---
+
+# → Ask / A-011 (Kirin Lin)
 
 +
