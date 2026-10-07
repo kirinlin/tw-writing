@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.10.07] - 2026-10-07
+
 ### Added
 
 - 新增 `AGENTS.md`，集中管理所有 AI Agent 共用的專案結構、編輯規範與維護慣例。
@@ -96,6 +98,7 @@
 - Before / After 範例擴充至 12 則，新增台灣用語、修飾範圍歧義、AI 腔調、條件語序與中英文混排。
 - `README.md`、`CLAUDE.md`、MIT `LICENSE`。
 
+[0.10.07]: https://github.com/kirinlin/tw-writing/releases/tag/v0.10.07
 [0.3.2]: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.2
 [0.3.1]: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.1
 [0.3.0]: https://github.com/kirinlin/tw-writing/releases/tag/v0.3.0
