@@ -4,19 +4,19 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: `e8302a4` implementation 與本輪 devlog 紀錄已提交至 `main`，並推送至 `origin/main`.
+Current commit: main 已合併 d5fd786 與 984163e；紀錄與設定由本輪收尾提交並交付.
 
-Tests/scenarios: `git diff --check` 通過；Markdown-only repository，沒有建置流程或測試套件.
+Tests/scenarios: 前輪文件檢查與獨立審查 PASS；合併無衝突，未提交內容雜湊一致，設定遷移比對與 diff 檢查通過.
 
-Configuration: ag.json — schema v7; validated for codex this round.
+Configuration: ag.json — schema v8; validated for codex this round.
 
-Proven: `AGENTS.md` 已集中共用指引；`CLAUDE.md` 僅保留 Claude Code 專用內容；`README.md` 與 `CHANGELOG.md` 已同步.
+Proven: Skill 改寫已合併回 main，前輪紀錄與本輪收尾一併保存.
 
-Open: `ag.json` 的 `lang: zh-tw` 變更仍未提交，且未納入本輪交付；A-002 的 3 個既有問題仍未回答.
+Open: none.
 
 Next: 等待使用者下一項工作.
 
-Artifacts: none.
+Artifacts: .agentflow/artifacts/A-008-rewrite/review.md.
 
 Archived eras: none.
 
@@ -444,5 +444,109 @@ Cross-check implementation: e0c7678ff7e15a01e90b2f320c13b10da0e23008
 ---
 
 # → Ask / A-008 (Kirin Lin)
+
++ agf
+  review and do your best to rewrite this SKILL
+
+---
+
+## [RUN-001] Event — 2026-10-07 09:53:37 +0800 (A-008)
+
+- 本輪直接審查並改寫 SKILL.md；保留根目錄位置、29 節編號、高頻用語與按需載入的完整對照表，同步 README.md、CHANGELOG.md。
+- 改善目標：精簡重複規則，保護原文事實與規範強度，補上語意判斷與例外，修正無來源數據範例及工具建議的處理方式。
+- 已讀取 notebook 全文，沒有未處理的非空 ans 或 owner inline 回覆。現有 gpt-6 分支採直接工作；沒有另開工作區或發佈新版本。
+
+## [RUN-002] Event — 2026-10-07 10:04:11 +0800 (A-008)
+
+- SKILL.md 全文改寫與附屬文件已提交 d5fd786；frontmatter、章節、交叉引用、連結、fence 與 diff 檢查通過。
+- 獨立 external-runner-v1 審查在無 remote clone 使用 gpt-5.6-terra/high，退出碼 0，三項判定均 PASS；clone 僅新增 CLI 保存的 review-result.md。審查紀錄提交 984163e。
+- Git hook 拒絕 gpt-6 分支提交根目錄 ag.json；已取消該檔案的暫存，保留啟動遷移，未繞過 hook。
+
+# ← Reply / A-008
+
+* _2026-10-07 10:04:11 +0800 (gpt-6.1-sol/medium)_
+
+## [SUMMARY]
+
+- 已完成 Skill 審查與全文改寫，保留 29 節及根目錄安裝位置；文件檢查與獨立審查通過，已在本機提交。
+
+## [FINAL REPORT]
+
+1. 「agf review and do your best to rewrite this SKILL」
+
+   - 成功：改寫 [SKILL.md](../SKILL.md)，從 1,996 行精簡至 953 行，檔案大小減少約 26%。保留 29 節、章節編號與根目錄位置。
+
+   - 修正重點：保留事實、範圍、不確定性及規範強度；不為具體化新增數據、設定或診斷；工具建議逐項覆核，用語依上下文判斷，短句可合併檢查。
+
+   - 已同步 README.md、references/taiwan-terms.md 與 CHANGELOG.md 的 Unreleased。未發佈新版本。
+
+   - 驗證：Skill frontmatter 驗證、29 節、單一 H1、交叉引用、本地連結、程式碼 fence 與 git diff --check 通過。已讀回保存內容並檢查變更範圍。本 repo 無建置流程或測試套件。
+
+   - 獨立審查：gpt-5.6-terra/high 在獨立、無 remote 的 clone 執行唯讀審查，Outcome、Minimality、Conformance 均 PASS。情境推演涵蓋模糊刪除範圍、MAY／SHOULD、引文與程式碼、不確定性及效能數據；這是規則審查，未執行 zhtw-mcp，環境沒有此工具。
+
+   - 交付：內容提交 d5fd786，審查紀錄提交 984163e，保留在本機 gpt-6 分支。Git hook 已拒絕把根目錄 ag.json 提交到此分支；啟動時自動產生的設定遷移留在工作目錄，未納入產品提交。
+
+   - Key Records — read these first
+
+     [改寫的 Skill](../SKILL.md)：完整規則、範例、流程與最終檢查清單。
+
+     [獨立審查](artifacts/A-008-rewrite/review.md)：審查判定、情境推演與限制。
+
+## Questions (batched — each with a suggested default)
+
+- None.
+
+---
+
+# → Ask / A-009 (Kirin Lin)
+
++ # Context from my IDE setup:
+
++ ## Active file: .agentflow/devlog.md
+
++ ## Open tabs:
+  - devlog.md: .agentflow/devlog.md
+  - ag.json: ag.json
+
++ ## My request:
+  agf close. merge back to main
+
+---
+
+## [RUN-001] Event — 2026-10-07 10:11:20 +0800 (A-009)
+
+- fetch 後 main 沒有遠端新增提交；gpt-6 僅多出本輪兩個提交，且沒有 stream worktree，因此採一般分支快轉合併。
+- 已切回 main 並快轉合併 gpt-6 至 984163e。使用 SHA-256 確認未提交的 devlog 與 ag.json 在切換及合併前後完整保留。
+- 已對照官方設定遷移與預設值補齊結果，確認 ag.json 沒有額外設定變更；diff 檢查通過。
+
+# ← Reply / A-009
+
+* _2026-10-07 10:11:20 +0800 (codex/unknown)_
+
+## [SUMMARY]
+
+- 已將 gpt-6 快轉合併回 main，解除根目錄紀錄的分支限制，完成前輪紀錄與本輪收尾。
+
+## [FINAL REPORT]
+
+1. 「agf close. merge back to main」
+
+   - 成功：main 已快轉至 984163e，包含 Skill 改寫提交 d5fd786 與獨立審查紀錄。原先未提交的 devlog 與 ag.json 在切換、合併後逐位元組保持相同。
+
+   - 收尾：將前輪 A-008 紀錄與本輪 A-009 回覆一併保存，ag.json 的 schema 遷移納入收尾提交。根目錄紀錄現在位於 main，無需繞過 Git hook。
+
+   - 驗證：fetch 後沒有遠端新增提交；合併無衝突。設定比對證實變更完全等於官方 v7→v8 遷移、移除停用 metrics 與補齊預設值，既有有效設定未變更。git diff --check 通過。
+
+   - 重用前輪 Skill 的文件檢查與 [獨立審查 PASS](artifacts/A-008-rewrite/review.md)，因為被審查內容沒有改變。未新增產品修改或發佈版本。
+
+   - 交付：收尾指令將紀錄與設定提交至 main，並同步 origin/main；保留 gpt-6 分支供查閱。
+
+## Questions (batched — each with a suggested default)
+
+- None.
+
+---
+
+# → Ask / A-010 (Kirin Lin)
 
 +
