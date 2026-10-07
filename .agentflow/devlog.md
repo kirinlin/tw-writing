@@ -4,19 +4,19 @@ Project: tw-writing
 
 Notebook: .agentflow/devlog.md — root.
 
-Current commit: v0.10.07 發佈提交 59c619a 已推送；本輪發佈紀錄另行收尾提交.
+Current commit: README 更新說明提交 7a248a0；本輪紀錄與審查證據由收尾指令提交並交付.
 
-Tests/scenarios: JSON、版本一致性、diff 檢查通過；遠端 tag 與正式 GitHub Release 已確認.
+Tests/scenarios: 官方指令文件與 CLI help 核對、保存內容讀回、diff 檢查及獨立審查 PASS.
 
 Configuration: ag.json — schema v8; validated for codex this round.
 
-Proven: v0.10.07 正式發佈完成，CHANGELOG 與兩份 Plugin manifest 同步.
+Proven: README 新增 Skill 更新指令，CHANGELOG 已同步.
 
 Open: none.
 
 Next: 等待使用者下一項工作.
 
-Artifacts: https://github.com/kirinlin/tw-writing/releases/tag/v0.10.07.
+Artifacts: .agentflow/artifacts/A-011-update-instructions/review.md.
 
 Archived eras: none.
 
@@ -596,5 +596,56 @@ Cross-check implementation: e0c7678ff7e15a01e90b2f320c13b10da0e23008
 ---
 
 # → Ask / A-011 (Kirin Lin)
+
++ # Context from my IDE setup:
+
++ ## Active file: .agentflow/devlog.md
+
++ ## Open tabs:
+  - devlog.md: .agentflow/devlog.md
+  - SKILL.md: SKILL.md
+  - ag.json: ag.json
+
++ ## My request:
+  README 新增 skill 更新指令
+
+---
+
+## [RUN-001] Event — 2026-10-07 10:58:12 +0800 (A-011)
+
+- README 新增更新章節，涵蓋三種既有安裝方式；CHANGELOG 記入 Unreleased。官方文件、CLI help、保存內容與 diff 檢查已核對。
+- 文件變更提交 7a248a0。獨立 external-runner-v1 審查使用 gpt-5.6-terra/high，退出碼 0，三項判定均 PASS；clone 僅新增 CLI 保存的 review-result.md。
+
+## [RUN-002] Event — 2026-10-07 10:58:12 +0800 (A-011)
+
+- 獨立 reviewer 把身分與提交寫在同一行，收尾檢查無法解析；原始位元組保留於 review-raw.md，host 僅將首行拆開並註明格式處理，不重跑審查。
+
+# ← Reply / A-011
+
+* _2026-10-07 10:58:12 +0800 (codex/unknown)_
+
+## [SUMMARY]
+
+- README 已新增三種安裝方式的 Skill 更新指令，CHANGELOG 已同步；文件檢查與獨立審查通過。
+
+## [FINAL REPORT]
+
+1. 「README 新增 skill 更新指令」
+
+   - 成功：[README 更新章節](../README.md#更新) 已補上 Claude Code Plugin Marketplace、npx skills 與手動 Clone 的更新方式；CHANGELOG 記入 Unreleased。
+
+   - 指令：Plugin 先更新 Marketplace 清單，再執行 claude plugin update tw-writing@tw-writing；npx skills update tw-writing 更新指定 Skill；手動 Clone 使用 git pull --ff-only，列出個人與專案路徑。
+
+   - 依據：[skills CLI 官方說明](https://github.com/vercel-labs/skills#skills-update) 與 [Claude Code 官方說明](https://code.claude.com/docs/en/discover-plugins#update-plugins-now)，另核對本機 CLI help。未實際更新使用者已安裝的 Skill。
+
+   - 驗證：已讀回保存內容，git diff --check 通過；[獨立審查](artifacts/A-011-update-instructions/review.md) 的 Outcome、Minimality、Conformance 均 PASS。內容提交為 7a248a0，本輪紀錄與審查證據由收尾指令提交並推送 main。
+
+## Questions (batched — each with a suggested default)
+
+- None.
+
+---
+
+# → Ask / A-012 (Kirin Lin)
 
 +
