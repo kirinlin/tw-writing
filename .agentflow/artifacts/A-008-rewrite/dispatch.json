@@ -1,0 +1,12 @@
+{
+  "runner": "external-runner-v1",
+  "profile": "codex-default",
+  "model": "gpt-5.6-terra",
+  "effort": "high",
+  "clone": "/tmp/agentflow-external-runner-GWMMQI/clone",
+  "source": "d5fd78696da0d029e3135fcab0cb770de295a4a2",
+  "report_output": "review-result.md",
+  "read_only": true,
+  "independent_context": true,
+  "same_family": true
+}

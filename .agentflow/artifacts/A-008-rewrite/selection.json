@@ -1,0 +1,27 @@
+{
+  "status": "selected",
+  "candidate_id": "codex-default",
+  "kind": "external",
+  "reason": "獨立審查全文改寫與語意保護",
+  "requested_model": "inherited",
+  "requested_effort": "inherited",
+  "requested": {
+    "tier": "better"
+  },
+  "actual": {
+    "model": "gpt-5.6-terra",
+    "effort": "high"
+  },
+  "usable_model": "gpt-5.6-terra",
+  "usable_effort": "high",
+  "limitations": [],
+  "action": {
+    "type": "external-runner",
+    "candidate_id": "codex-default",
+    "profile_id": "codex-default",
+    "command": [
+      "codex",
+      "exec"
+    ]
+  }
+}
