@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- `README.md` 新增 Skill 更新指令，涵蓋 Claude Code Plugin Marketplace、`npx skills` 與手動 Clone 三種安裝方式。
+
 ## [0.10.07] - 2026-10-07
 
 ### Added

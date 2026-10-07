@@ -84,6 +84,47 @@ git clone https://github.com/kirinlin/tw-writing.git .claude/skills/tw-writing
 
 安裝後重新啟動 Agent，再明確指定使用 `tw-writing` 處理一段文字，確認 Agent 能讀取本 Skill。
 
+## 更新
+
+依原本的安裝方式選擇更新指令。
+
+### Claude Code（Plugin Marketplace）
+
+先更新 Marketplace 清單，再更新已安裝的 Plugin：
+
+```bash
+claude plugin marketplace update tw-writing
+claude plugin update tw-writing@tw-writing
+```
+
+更新後重新啟動 Claude Code。Marketplace 清單與已安裝的 Plugin 是不同的更新對象，詳見 [Claude Code Plugin 更新說明](https://code.claude.com/docs/en/discover-plugins#update-plugins-now)。
+
+### 透過 `npx skills` 安裝
+
+只更新 `tw-writing`：
+
+```bash
+npx skills update tw-writing
+```
+
+執行時依提示選擇安裝範圍；也可用 `-g` 指定個人帳號，或用 `-p` 指定目前專案。若要更新所有已安裝的 Skill，使用 `npx skills update`，詳見 [skills CLI 更新說明](https://github.com/vercel-labs/skills#skills-update)。
+
+### 手動 Clone
+
+個人帳號：
+
+```bash
+git -C ~/.claude/skills/tw-writing pull --ff-only
+```
+
+單一專案（在專案根目錄執行）：
+
+```bash
+git -C .claude/skills/tw-writing pull --ff-only
+```
+
+若 Clone 到其他 Agent 的 skills 目錄，將路徑改為實際安裝位置。
+
 ## 使用方式
 
 支援自動選用 Skill 的 Agent 可依任務載入本 Skill，也可以直接指定：
