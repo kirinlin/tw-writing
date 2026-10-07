@@ -1,0 +1,14 @@
+{
+  "frontmatter": "quick_validate PASS",
+  "sections": 29,
+  "h1": 1,
+  "cross_references": "PASS",
+  "local_links": "PASS",
+  "code_fences": "PASS",
+  "diff_check": "PASS",
+  "old_lines": 1996,
+  "new_lines": 953,
+  "old_bytes": 47624,
+  "new_bytes": 35300,
+  "tools": "zhtw-mcp not available; host checked text"
+}

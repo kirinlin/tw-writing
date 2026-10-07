@@ -1,0 +1,14 @@
+{
+  "changed_files": [
+    "SKILL.md",
+    "README.md",
+    "CHANGELOG.md",
+    "references/taiwan-terms.md",
+    "ag.json"
+  ],
+  "changed_lines": 1960,
+  "behavior_change": true,
+  "trust_boundary": false,
+  "broad_change": true,
+  "consequential_change": false
+}
